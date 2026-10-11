@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>__TITLE__</title>
+  <meta name="description" content="Browse visual designs, tweak palette and type, copy design.md into any agent or project." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="__FONTS_URL__" />
+  <link rel="stylesheet" href="__ROOT__style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="wordmark" href="__ROOT__index.html">DESIGN<span>/</span>PICKER</a>
+      <button class="btn" id="random" type="button"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.2" cy="8.2" r="1.9" fill="currentColor"/><circle cx="15.8" cy="8.2" r="1.9" fill="currentColor"/><circle cx="12" cy="12" r="1.9" fill="currentColor"/><circle cx="8.2" cy="15.8" r="1.9" fill="currentColor"/><circle cx="15.8" cy="15.8" r="1.9" fill="currentColor"/></svg>Random</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <h1>Pick a design.</h1>
+        <p class="intro">
+          Swap its colors or type if you like. Copy <strong>design.md</strong> —
+          paste it into any agent or project to get posters, slides, and compositions in this look.
+        </p>
+        <p class="hero-meta" id="count"></p>
+      </section>
+      <div class="grid" id="grid"></div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-row">
+      <a class="foot-credit" href="https://abhinai.in" target="_blank" rel="noopener">© __YEAR__ Abhinai<span class="foot-arrow" aria-hidden="true">↗</span></a>
+      <a class="foot-x" href="https://x.com/AbhinaiAJ" target="_blank" rel="noopener">X<span class="foot-arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </footer>
+
+  <script>window.DATA = __DATA_JSON__; window.ROOT = "__ROOT__";</script>
+  <script src="__ROOT__app.js"></script>
+</body>
+</html>

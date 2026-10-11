@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>__TITLE__</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="__FONTS_URL__" />
+  <link rel="stylesheet" href="__ROOT__style.css" />
+</head>
+<body class="design-page">
+  <header class="top">
+    <div class="wrap">
+      <a class="back" href="__ROOT__index.html">← All designs</a>
+    <div class="wordmark">DESIGN<span>/</span>PICKER</div>
+    <button class="btn" id="random" type="button"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="4.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.2" cy="8.2" r="1.9" fill="currentColor"/><circle cx="15.8" cy="8.2" r="1.9" fill="currentColor"/><circle cx="12" cy="12" r="1.9" fill="currentColor"/><circle cx="8.2" cy="15.8" r="1.9" fill="currentColor"/><circle cx="15.8" cy="15.8" r="1.9" fill="currentColor"/></svg>Random</button>
+    </div>
+  </header>
+
+  <main class="design">
+    <section class="stage">
+      <div class="stage-poster" id="stagePoster"></div>
+    </section>
+
+    <section class="panel">
+      <h1 id="dName"></h1>
+      <p class="panel-desc" id="dDesc"></p>
+
+      <h3>Colors</h3>
+      <div class="chips" id="paletteChips"></div>
+
+      <h3>Type</h3>
+      <div class="chips" id="pairingChips"></div>
+
+      <div class="copybar">
+        <button class="btn copy" id="copy" type="button">Copy design.md</button>
+      </div>
+
+      <details class="mdpeek">
+        <summary>preview design.md</summary>
+        <pre id="mdPreview"></pre>
+      </details>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-row">
+      <a class="foot-credit" href="https://abhinai.in" target="_blank" rel="noopener">© __YEAR__ Abhinai<span class="foot-arrow" aria-hidden="true">↗</span></a>
+      <a class="foot-x" href="https://x.com/AbhinaiAJ" target="_blank" rel="noopener">X<span class="foot-arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </footer>
+
+  <script>window.DATA = __DATA_JSON__; window.DESIGN_ID = "__DESIGN_ID__"; window.ROOT = "__ROOT__";</script>
+  <script src="__ROOT__app.js"></script>
+</body>
+</html>
