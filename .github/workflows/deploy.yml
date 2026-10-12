@@ -18,7 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Snippet comes from a repo secret — forks/clones never receive it,
+      # so their builds contain no tracking.
       - run: python build.py
+        env:
+          ANALYTICS_SNIPPET: ${{ secrets.ANALYTICS_SNIPPET }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

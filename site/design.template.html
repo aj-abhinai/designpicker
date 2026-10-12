@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="__FONTS_URL__" />
   <link rel="stylesheet" href="__ROOT__style.css" />
+  <!-- Replaced with the analytics snippet only when ANALYTICS_SNIPPET is set in CI. -->
+__ANALYTICS__
 </head>
 <body class="design-page">
   <header class="top">
@@ -46,8 +48,13 @@
 
   <footer class="foot">
     <div class="wrap foot-row">
-      <a class="foot-credit" href="https://abhinai.in" target="_blank" rel="noopener">© __YEAR__ Abhinai<span class="foot-arrow" aria-hidden="true">↗</span></a>
-      <a class="foot-x" href="https://x.com/AbhinaiAJ" target="_blank" rel="noopener">X<span class="foot-arrow" aria-hidden="true">↗</span></a>
+      <!-- Renders the no-cookies stats note only when analytics is injected (CI builds). -->
+      __ANALYTICS_NOTE__
+      <div class="foot-links">
+        <a class="foot-credit" href="https://abhinai.in" target="_blank" rel="noopener">© __YEAR__ Abhinai<span class="foot-arrow" aria-hidden="true">↗</span></a>
+        <a class="foot-x" href="https://x.com/AbhinaiAJ" target="_blank" rel="noopener">X<span class="foot-arrow" aria-hidden="true">↗</span></a>
+        <a class="foot-x" href="https://github.com/aj-abhinai/designpicker" target="_blank" rel="noopener">Source<span class="foot-arrow" aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </footer>
 

@@ -4,6 +4,7 @@
 
 import datetime
 import json
+import os
 import shutil
 from pathlib import Path
 
@@ -51,6 +52,14 @@ def _fonts_url() -> str:
     return "https://fonts.googleapis.com/css2?" + "&".join(f"family={f}" for f in FONTS) + "&display=swap"
 
 
+def _analytics_note() -> str:
+    # Footer honesty note — rendered only when the analytics snippet is
+    # injected (official CI deploys). Never appears in local/fork builds.
+    if not os.environ.get("ANALYTICS_SNIPPET"):
+        return ""
+    return '<span class="foot-note">No cookies · anonymous stats</span>'
+
+
 def _render(template_name: str, out_path: Path, title: str, design_id: str, root: str) -> None:
     html = (ROOT / "site" / template_name).read_text(encoding="utf-8")
     html = (
@@ -60,6 +69,10 @@ def _render(template_name: str, out_path: Path, title: str, design_id: str, root
         .replace("__YEAR__", str(datetime.date.today().year))
         .replace("__FONTS_URL__", _fonts_url())
         .replace("__DATA_JSON__", _data_json())
+        # Analytics: injected only when ANALYTICS_SNIPPET is set in the CI
+        # deploy step (repo secret). Local and fork builds stay clean.
+        .replace("__ANALYTICS__", os.environ.get("ANALYTICS_SNIPPET", ""))
+        .replace("__ANALYTICS_NOTE__", _analytics_note())
     )
     out_path.write_text(html, encoding="utf-8")
 
